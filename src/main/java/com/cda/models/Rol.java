@@ -35,8 +35,7 @@ public class Rol {
      * Llave foranea de la entidad permisos
      */
     @JsonProperty("idPermission")
-    @Column(name = "ID_PERMISSION", nullable = false)
     @JoinColumn(name = "idPermission")
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Permission permission;
 }

@@ -28,9 +28,8 @@ public class City {
      * Llave foranea de la entidad departamento
      */
     @JsonProperty("idDepartment")
-    @Column(name = "ID_DEPARTMENT", nullable = false)
     @JoinColumn(name = "idDepartment")
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Department department;
 
 }

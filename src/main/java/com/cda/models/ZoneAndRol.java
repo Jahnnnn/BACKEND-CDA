@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity
 @Table(name = "zone_and_rol")
 public class ZoneAndRol {
 
@@ -14,13 +13,11 @@ public class ZoneAndRol {
      */
 
     @JsonProperty("idRol")
-    @Column(name = "ID_ROL", nullable = false)
     @JoinColumn(name = "idRol")
     @ManyToMany(fetch = FetchType.LAZY)
     private Rol rol;
 
     @JsonProperty("idZone")
-    @Column(name = "ID_ZONE", nullable = false)
     @JoinColumn(name = "idZone")
     @ManyToMany(fetch = FetchType.LAZY)
     private Zone zone;

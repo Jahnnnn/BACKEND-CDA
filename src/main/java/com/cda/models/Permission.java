@@ -32,7 +32,6 @@ public class Permission {
      * Llave foranea de la entidad funciones
      */
     @JsonProperty("idFunction")
-    @Column(name = "ID_FUNCTION", nullable = false)
     @JoinColumn(name = "idFunction")
     @OneToOne(fetch = FetchType.LAZY)
     private Function function;

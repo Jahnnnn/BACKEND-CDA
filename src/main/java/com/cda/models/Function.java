@@ -46,7 +46,6 @@ public class Function {
      * Llave foranea de la entidad módulo
      */
     @JsonProperty("idModule")
-    @Column(name = "ID_MODULE", nullable = false)
     @JoinColumn(name = "idModule")
     @OneToOne(fetch = FetchType.LAZY)
     private Module module;

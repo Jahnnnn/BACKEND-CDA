@@ -60,17 +60,15 @@ public class Contact {
      * Llave foranea de la entidad ciudad
      */
     @JsonProperty("idCity")
-    @Column(name = "ID_CITY", nullable = false)
     @JoinColumn(name = "idCity")
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private City city;
 
     /**
      * LLave foranea de la entidad tipos de idenficación
      */
     @JsonProperty("idTypeIdentification")
-    @Column(name = "ID_TYPE_IDENTIFICATION", nullable = false)
     @JoinColumn(name = "idTypeIdentification")
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private TypeIdentifications typeIdentifications;
 }

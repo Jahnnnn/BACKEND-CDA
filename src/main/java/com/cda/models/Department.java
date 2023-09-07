@@ -28,9 +28,8 @@ public class Department {
      * Llave foranea de la entidad pais
      */
     @JsonProperty("idCountry")
-    @Column(name = "ID_COUNTRY", nullable = false)
     @JoinColumn(name = "idCountry")
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
 }

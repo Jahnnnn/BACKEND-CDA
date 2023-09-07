@@ -7,7 +7,6 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@Entity
 @Table(name = "user_and_rol")
 public class UserAndRol {
 
@@ -16,13 +15,11 @@ public class UserAndRol {
      */
 
     @JsonProperty("idUser")
-    @Column(name = "ID_USER", nullable = false)
     @JoinColumn(name = "idUser")
     @ManyToMany(fetch = FetchType.LAZY)
     private User user;
 
     @JsonProperty("idRol")
-    @Column(name = "ID_ROL", nullable = false)
     @JoinColumn(name = "idRol")
     @ManyToMany(fetch = FetchType.LAZY)
     private Rol rol;

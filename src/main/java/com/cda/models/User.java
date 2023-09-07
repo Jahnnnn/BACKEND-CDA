@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "user_system")
 public class User {
 
     /**
@@ -67,7 +67,6 @@ public class User {
      * LLave foranea de la entidad contacto
      */
     @JsonProperty("idContact")
-    @Column(name = "ID_CONTACT", nullable = false)
     @JoinColumn(name = "idContact")
     @OneToOne(fetch = FetchType.LAZY)
     private Contact contact;
