@@ -2,40 +2,31 @@ package com.cda.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
+@Data
 @Table(name = "rol")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Rol {
 
-    /**
-     * Id de la clase
-     */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idRol", unique = true)
-    private Integer idRol;
+    @JsonProperty("idRol")
+    @Column(name = "ID_ROL", nullable = false)
+    private Long idRol;
 
-    /**
-     * Nombre del rol
-     */
-    @JsonProperty("name")
-    @Column(name = "NAME", length = 100, precision = 100, nullable = false)
-    private String name;
+    @JsonProperty("nombreRol")
+    @Column(name = "NOMBRE_ROL", nullable = false)
+    private String nombreRol;
 
-    /**
-     * Descripción del rol
-     */
-    @JsonProperty("description")
-    @Column(name = "DESCRIPTION", length = 500, precision = 100, nullable = false)
-    private String description;
-
-    /**
-     * Llave foranea de la entidad permisos
-     */
-    @JsonProperty("idPermission")
-    @JoinColumn(name = "idPermission")
+    //Llaves foraneas
+    @JsonProperty("permiso")
+    @JoinColumn(name = "permiso", referencedColumnName = "ID_PERMISO")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Permission permission;
+    private PermisoModulo permiso;
+    //
+
 }
